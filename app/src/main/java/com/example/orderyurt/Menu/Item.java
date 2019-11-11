@@ -1,4 +1,4 @@
-package com.example.orderyurt;
+package com.example.orderyurt.Menu;
 
 public class Item {
     private String itemID;
