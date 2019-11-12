@@ -17,12 +17,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserInterface.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".UserInterface.MainActivity">
+        </activity>
+        <activity android:name=".UserInterface.AddReviewActivity" >
+        </activity>
+        <activity android:name=".UserInterface.BasketActivity" >
+        </activity>
+        <activity android:name=".UserInterface.CreateCouponActivity" >
+        </activity>
+        <activity android:name=".UserInterface.CustomerPageActivity" >
+        </activity>
+        <activity android:name=".UserInterface.EditMenuActivity" >
+        </activity>
+        <activity android:name=".UserInterface.MenuActivity" >
+        </activity>
+        <activity android:name=".UserInterface.PayActivity" >
+        </activity>
+        <activity android:name=".UserInterface.RegisterCustomerActivity" >
+        </activity>
+        <activity android:name=".UserInterface.RegisterRestaurantActivity" >
+        </activity>
+        <activity android:name=".UserInterface.RestaurantPageActivity" >
+        </activity>
+        <activity android:name=".UserInterface.ReviewsListActivity" >
+        </activity>
+        <activity android:name=".UserInterface.SplitPayActivity" >
         </activity>
     </application>
 
