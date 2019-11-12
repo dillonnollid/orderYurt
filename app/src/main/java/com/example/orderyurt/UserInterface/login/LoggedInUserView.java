@@ -1,4 +1,4 @@
-package com.example.orderyurt.ui.login;
+package com.example.orderyurt.UserInterface.login;
 
 /**
  * Class exposing authenticated user details to the UI.

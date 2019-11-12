@@ -1,13 +1,11 @@
-package com.example.orderyurt.ui.login;
+package com.example.orderyurt.UserInterface.login;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import android.content.Intent;
 import android.util.Patterns;
 
-import com.example.orderyurt.MainActivity;
 import com.example.orderyurt.data.LoginRepository;
 import com.example.orderyurt.data.Result;
 import com.example.orderyurt.data.model.LoggedInUser;

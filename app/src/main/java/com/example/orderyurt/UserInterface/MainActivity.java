@@ -1,17 +1,18 @@
-package com.example.orderyurt;
+package com.example.orderyurt.UserInterface;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.example.orderyurt.ui.login.LoginActivity;
+import com.example.orderyurt.R;
 
 public class MainActivity extends AppCompatActivity {
+    //Show list of restaurants
+    //Show list of tables for specified restaurant
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

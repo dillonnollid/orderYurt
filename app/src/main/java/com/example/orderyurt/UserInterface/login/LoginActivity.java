@@ -1,4 +1,4 @@
-package com.example.orderyurt.ui.login;
+package com.example.orderyurt.UserInterface.login;
 
 import android.app.Activity;
 
@@ -23,10 +23,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.orderyurt.MainActivity;
+import com.example.orderyurt.UserInterface.MainActivity;
 import com.example.orderyurt.R;
-import com.example.orderyurt.ui.login.LoginViewModel;
-import com.example.orderyurt.ui.login.LoginViewModelFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
