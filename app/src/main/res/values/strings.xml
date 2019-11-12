@@ -5,10 +5,20 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">Welcome !</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-
+    <string-array name="testMenu1">
+        <item>6 Chicken Wings</item>
+        <item>12 Nuggest</item>
+        <item>Big Bobs BBQ Burger</item>
+        <item>Spicy Boi x100</item>
+        <item>Bag of bits</item>
+        <item>Ostrich Teste</item>
+        <item>Fried Sourcrout</item>
+        <item>Everything Burns w/Special Sauce</item>
+        <item>Choco Choco Milkshake mmmm</item>
+    </string-array>
 </resources>

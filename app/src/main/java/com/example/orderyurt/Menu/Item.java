@@ -5,4 +5,8 @@ public class Item {
     private String itemName;
     private String itemDescription;
     private float itemPrice;
+
+    public String getName(){
+        return itemName;
+    }
 }

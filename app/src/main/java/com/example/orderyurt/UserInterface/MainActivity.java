@@ -35,8 +35,11 @@ public class MainActivity extends AppCompatActivity {
         Button button= (Button) findViewById(R.id.viewMenuButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Bundle extras = new Bundle();
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                intent.putExtra("restaurantClicked", spinner.getSelectedItem().toString());
+                extras.putString("restaurantClicked", spinner.getSelectedItem().toString());
+                intent.putExtras(extras);
+                System.out.println("In the button click now");
                 startActivity(intent);
             }
         });
