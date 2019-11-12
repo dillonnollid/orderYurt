@@ -2,6 +2,7 @@ package com.example.orderyurt.UserInterface;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,12 +15,15 @@ public class MainActivity extends AppCompatActivity {
     //Show list of restaurants
     //Show list of tables for specified restaurant
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final Spinner spinner = findViewById(R.id.spinner);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+
         String restaurantArray[] = new String[]{"Lana", "Jet's Pizza", "Camile", "La Cucina", "Brew Bros."};
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
                 (this, android.R.layout.simple_spinner_item,
@@ -31,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
         Button button= (Button) findViewById(R.id.viewMenuButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                intent.putExtra("restaurantClicked", spinner.getSelectedItem().toString());
+                startActivity(intent);
             }
         });
     }
