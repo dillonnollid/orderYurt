@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.orderyurt.UserInterface">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -8,7 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name="com.example.orderyurt.Login.LoginActivity"
             android:label="@string/title_activity_login">
@@ -18,32 +22,32 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.orderyurt.UserInterface.MainActivity">
+        <activity android:name=".MainActivity">
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.AddReviewActivity" >
+        <activity android:name=".AddReviewActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.BasketActivity" >
+        <activity android:name=".BasketActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.CreateCouponActivity" >
+        <activity android:name=".CustomerPageActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.CustomerPageActivity" >
+        <activity android:name=".EditMenuActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.EditMenuActivity" >
+        <activity android:name=".MenuActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.MenuActivity" >
+        <activity android:name="PayActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.PayActivity" >
+        <activity android:name=".RegisterCustomerActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.RegisterCustomerActivity" >
+        <activity android:name=".RegisterRestaurantActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.RegisterRestaurantActivity" >
+        <activity android:name=".ReviewsListActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.RestaurantPageActivity" >
+        <activity android:name=".SplitPayActivity" >
         </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.ReviewsListActivity" >
-        </activity>
-        <activity android:name="com.example.orderyurt.UserInterface.SplitPayActivity" >
-        </activity>
+        <activity android:name=".RestaurantPageActivity" />
+        <activity android:name=".CreateCouponActivity" />
+        <activity android:name=".ViewRestaurantPageActivity" />
+
     </application>
 
 </manifest>

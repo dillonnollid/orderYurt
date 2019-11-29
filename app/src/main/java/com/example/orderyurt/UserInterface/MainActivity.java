@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
         final Spinner spinner = findViewById(R.id.spinner);
 
 
-
-        String restaurantArray[] = new String[]{"Lana", "Jet's Pizza", "Camile", "La Cucina", "Brew Bros."};
+        String[] restaurantArray = new String[]{"Lana", "Jet's Pizza", "Camile", "La Cucina", "Brew Bros."};
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
                 (this, android.R.layout.simple_spinner_item,
                         restaurantArray); //selected item will look like a spinner set from XML
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 .simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerArrayAdapter);
 
-        Button button= (Button) findViewById(R.id.viewMenuButton);
+        Button button= findViewById(R.id.viewMenuButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Bundle extras = new Bundle();

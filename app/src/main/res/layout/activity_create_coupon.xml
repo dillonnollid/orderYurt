@@ -1,129 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/reviewText"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#009688"
-        android:fontFamily="sans-serif"
-        android:text="@string/create_coupon"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView"
-        style="@style/Widget.AppCompat.TextView"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/enter_coupon_title"
-        android:text="@string/title"
-        android:background="#CDDC39"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:backgroundTintMode="add"
-        android:ems="10"
-        android:hint="@string/coupon_title"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="#9C27B0" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="@string/code"
-        android:background="#CDDC39"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
-
-    <EditText
-        android:id="@+id/code"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/coupon_code"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="#9C27B0" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#CDDC39"
-        android:text="@string/value_decimal"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
-
-    <EditText
-        android:id="@+id/value"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/value_of_coupon"
-        android:inputType="numberDecimal"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#CDDC39"
-        android:text="@string/start_date"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/startDate"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/start_date"
-        android:inputType="date"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#CDDC39"
-        android:text="@string/end_date"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/endDate"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/valid_until_date"
-        android:inputType="date"
-        android:textAlignment="center" />
-
-    <Button
-        android:id="@+id/addCouponBtn"
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#4CAF50"
-        android:backgroundTintMode="src_over"
-        android:text="Add Coupon" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/reviewText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#009688"
+            android:fontFamily="sans-serif"
+            android:text="@string/create_coupon"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/Widget.AppCompat.TextView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#CDDC39"
+            android:hint="@string/enter_coupon_title"
+            android:text="@string/title"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTintMode="add"
+            android:ems="10"
+            android:hint="@string/coupon_title"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="#9C27B0" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#CDDC39"
+            android:text="@string/code"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/code"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="@string/coupon_code"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="#9C27B0" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#CDDC39"
+            android:text="@string/value_decimal"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/value"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="@string/value_of_coupon"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#CDDC39"
+            android:text="@string/start_date"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/startDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="@string/start_date"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#CDDC39"
+            android:text="@string/end_date"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/endDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="@string/valid_until_date"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/addCouponBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4CAF50"
+            android:backgroundTintMode="src_over"
+            android:text="@string/add_coupon" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -9,7 +9,10 @@ public class RestaurantUser implements User, Subject{
     private String address;
     private String name;
     private int [] tables;
-    private Coupon coupon;
+
+    public RestaurantUser(){
+        subscribers = new ArrayList<Subscriber>();
+    }
 
     @Override
     public void addSubscriber(Subscriber subscriber){
@@ -20,15 +23,25 @@ public class RestaurantUser implements User, Subject{
 
     @Override
     public void removeSubscriber(Subscriber subscriber){
-        if(subscribers.contains(subscriber)) {
-            subscribers.remove(subscriber);
-        }
+        subscribers.remove(subscriber);
     }
 
     @Override
-    public void notifySubscribers(){
+    public void notifySubscribers(Coupon coupon){
         for(Subscriber subscriber : this.subscribers){
-            subscriber.update(this.coupon);
+            subscriber.update(coupon);
         }
+    }
+
+    public boolean checkIfSubscriberExists(Subscriber subscriber){
+        boolean flag = false;
+        if(this.subscribers.contains(subscriber)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    public boolean checkIfSubscribersIsEmpty(){
+        return this.subscribers.size() == 0;
     }
 }

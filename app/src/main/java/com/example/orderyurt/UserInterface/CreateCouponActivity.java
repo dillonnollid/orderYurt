@@ -1,11 +1,17 @@
 package com.example.orderyurt.UserInterface;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.orderyurt.Accounts.RestaurantUser;
 import com.example.orderyurt.Discount.Coupon;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,13 +19,13 @@ import java.util.Date;
 
 public class CreateCouponActivity extends AppCompatActivity {
     //Create coupon object and add it to db for this restaurant
-
+    RestaurantUser rUser = new RestaurantUser();
     Coupon newCoupon;
     Button addCouponBtn;
     EditText title, code, value, startDate, endDate;
     DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
     Date eDate, sDate;
-    float  cValue;
+    Double  cValue = 0.0;
     String cCode, cTitle;
 
 
@@ -29,9 +35,9 @@ public class CreateCouponActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_coupon);
 
         //Grabbing the input from the EditText boxes
-        addCouponBtn = findViewById(R.id.addCouponBtn);
-        title = findViewById(R.id.title);
-        code = findViewById(R.id.code);
+        addCouponBtn = (Button) findViewById(R.id.addCouponBtn);
+        title = (EditText) findViewById(R.id.title);
+        code = (EditText) findViewById(R.id.code);
         value = findViewById(R.id.value);
         startDate = findViewById(R.id.startDate);
         endDate = findViewById(R.id.endDate);
@@ -39,8 +45,16 @@ public class CreateCouponActivity extends AppCompatActivity {
         //Assigning the input to variables of the correct type
         cTitle = title.getText().toString();
         cCode = code.getText().toString();
-        cValue = Float.valueOf(value.getText().toString());
-
+        String v = value.getText().toString();
+        if (!v.isEmpty()) {
+            try {
+                cValue = Double.parseDouble(v);
+                // it means it is double
+            } catch (Exception e1) {
+                // this means it is not double
+                e1.printStackTrace();
+            }
+        }
         //Try catch is for formatting the dates.
         try {
             String d1 = startDate.getText().toString();
@@ -57,6 +71,13 @@ public class CreateCouponActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     public void onClick(View view) {
                         newCoupon = new Coupon(cTitle, cCode, cValue, sDate, eDate, 1);
+                        rUser.notifySubscribers(newCoupon);
+
+                        Toast.makeText(CreateCouponActivity.this, R.string.coupon_added,
+                                Toast.LENGTH_LONG).show();
+
+                        Intent myIntent = new Intent(CreateCouponActivity.this, RestaurantPageActivity.class);
+                        CreateCouponActivity.this.startActivity(myIntent);
                     }
                 });
     }

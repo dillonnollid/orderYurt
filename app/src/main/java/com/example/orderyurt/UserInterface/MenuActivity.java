@@ -21,19 +21,22 @@ public class MenuActivity extends AppCompatActivity {
     //Show list of items for this restaurant
     //Add item to basket
     //Go to basket
+    String rest = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        //ArrayList<Item> items = new ArrayList<Item>();
         Intent i = getIntent();
         Bundle b = i.getExtras();
-        String rest = b.getString("restaurantClicked");
+        rest = b.getString("restaurantClicked");
+
         Toast.makeText(MenuActivity.this, rest,
                 Toast.LENGTH_LONG).show();
         TextView currentRest;
-        currentRest = (TextView) findViewById(R.id.textView2);;
-        currentRest.setText("Menu For " + rest);
+        currentRest = (TextView) findViewById(R.id.menuTitle);;
+        currentRest.setText(rest);
+
+        Button restPageBtn = findViewById(R.id.restPageBtn);
 
 
         ListView listview = (ListView) findViewById(R.id.listView1);
@@ -51,6 +54,16 @@ public class MenuActivity extends AppCompatActivity {
             }
         };
         listview.setOnItemClickListener(cl);
+
+
+        restPageBtn.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View view) {
+                        Intent myIntent = new Intent(MenuActivity.this, ViewRestaurantPageActivity.class);
+                        myIntent.putExtra("restName", rest); //Optional parameters
+                        MenuActivity.this.startActivity(myIntent);
+                    }
+                });
     }
 
 }
