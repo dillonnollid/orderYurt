@@ -1,4 +1,7 @@
 package com.example.orderyurt.UserInterface;
 
-public class CustomerPageActivity {
+import android.app.Activity;
+
+public class CustomerPageActivity extends Activity {
+
 }

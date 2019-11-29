@@ -1,4 +1,6 @@
 package com.example.orderyurt.UserInterface;
 
-public class RegisterRestaurantActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class RegisterRestaurantActivity extends AppCompatActivity {
 }

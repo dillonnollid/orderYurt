@@ -1,4 +1,4 @@
-package com.example.orderyurt.UserInterface.login;
+package com.example.orderyurt.Login;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;

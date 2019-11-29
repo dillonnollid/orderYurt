@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.example.orderyurt.R;
 
 public class MainActivity extends AppCompatActivity {
     //Show list of restaurants

@@ -1,6 +1,8 @@
 package com.example.orderyurt.UserInterface;
 
-public class PayActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PayActivity extends AppCompatActivity {
     //Let user pay or select to split pay
     //Let user add coupon
     //Check if coupon is valid

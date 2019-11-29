@@ -1,4 +1,4 @@
-package com.example.orderyurt.UserInterface.login;
+package com.example.orderyurt.Login;
 
 import android.app.Activity;
 
@@ -24,7 +24,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.orderyurt.UserInterface.MainActivity;
-import com.example.orderyurt.R;
+import com.example.orderyurt.UserInterface.R;
+
 
 public class LoginActivity extends AppCompatActivity {
 

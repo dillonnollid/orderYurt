@@ -1,6 +1,8 @@
 package com.example.orderyurt.UserInterface;
 
-public class SplitPayActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SplitPayActivity extends AppCompatActivity {
     //Allow user to select items they want to pay for
     //Then let them enter payment details (maybe do a conventional pay in a loop until meal
     //is fully paid for or something??)

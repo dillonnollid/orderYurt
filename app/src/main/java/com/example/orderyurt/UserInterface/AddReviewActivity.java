@@ -1,6 +1,8 @@
 package com.example.orderyurt.UserInterface;
 
-public class AddReviewActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class AddReviewActivity extends AppCompatActivity {
     //Text box for name, description
     //Dropdown for stars?
     //button to post

@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.orderyurt.Menu.Item;
-import com.example.orderyurt.R;
 
 public class MenuActivity extends AppCompatActivity {
     //Show list of items for this restaurant
