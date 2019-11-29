@@ -7,5 +7,5 @@ public class AddReviewActivity extends AppCompatActivity {
     //Dropdown for stars?
     //button to post
     //button to exit
-    //Add review to DB with userID and restaurantID/////
+    //Add review to DB with userID and restaurantID///////
 }
