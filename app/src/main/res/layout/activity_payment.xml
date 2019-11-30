@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/soloButton"
+        android:layout_width="136dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="55dp"
+        android:onClick="soloClick"
+        android:text="Solo Pay"
+        app:layout_constraintBottom_toTopOf="@+id/cardField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/splitButton"
+        android:layout_width="154dp"
+        android:layout_height="141dp"
+        android:onClick="splitClick"
+        android:text="Split Pay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/soloButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/cardField"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="420dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Please enter 16 Digit Card Number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splitButton" />
+
+    <EditText
+        android:id="@+id/cvvField"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Please enter 3-Digit CVV Number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardField" />
+
+    <Button
+        android:id="@+id/completePaymentButton"
+        android:layout_width="320dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="80dp"
+        android:onClick="completeClicked"
+        android:text="Complete Payment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvvField"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

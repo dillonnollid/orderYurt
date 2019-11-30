@@ -30,6 +30,7 @@
     <string name="textview">TextView</string>
     <string name="coupons">Coupons</string>
     <string name="coupon_added">Coupon Added</string>
+    <string name="payment">Payment</string>
 
     <string-array name="testMenu1">
         <item>6 Chicken Wings</item>
@@ -42,4 +43,6 @@
         <item>Everything Burns w/Special Sauce</item>
         <item>Choco Choco Milkshake mmmm</item>
     </string-array>
+    <string name="title_activity_basket">BasketActivity</string>
+    <string name="title_activity_payment">PaymentActivity</string>
 </resources>
