@@ -1,0 +1,13 @@
+package com.example.orderyurt.Accounts;
+
+public class SilverCustomer extends CustomerUser {
+    private String customerType = "silver";
+
+    public SilverCustomer(){
+        super();
+    }
+
+    public String getCustomerType(){
+        return customerType;
+    }
+}
