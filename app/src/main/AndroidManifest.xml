@@ -14,40 +14,34 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".PaymentActivity"
+            android:label="@string/title_activity_payment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BasketActivity"
+            android:label="@string/title_activity_basket"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="com.example.orderyurt.Login.LoginActivity"
             android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".AddReviewActivity" >
-        </activity>
-        <activity android:name=".BasketActivity" >
-        </activity>
-        <activity android:name=".CustomerPageActivity" >
-        </activity>
-        <activity android:name=".EditMenuActivity" >
-        </activity>
-        <activity android:name=".MenuActivity" >
-        </activity>
-        <activity android:name="PayActivity" >
-        </activity>
-        <activity android:name=".RegisterCustomerActivity" >
-        </activity>
-        <activity android:name=".RegisterRestaurantActivity" >
-        </activity>
-        <activity android:name=".ReviewsListActivity" >
-        </activity>
-        <activity android:name=".SplitPayActivity" >
-        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AddReviewActivity" />
+        <activity android:name=".CustomerPageActivity" />
+        <activity android:name=".EditMenuActivity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".RegisterCustomerActivity" />
+        <activity android:name=".RegisterRestaurantActivity" />
+        <activity android:name=".ReviewsListActivity" />
+        <activity android:name=".SplitPayActivity" />
         <activity android:name=".RestaurantPageActivity" />
         <activity android:name=".CreateCouponActivity" />
         <activity android:name=".ViewRestaurantPageActivity" />
-
     </application>
 
 </manifest>

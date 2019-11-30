@@ -35,4 +35,8 @@ public class CustomerUser implements User, Subscriber{
     public String getCustomerName(){
         return this.customerName;
     }
+
+    public String getCustomerType(){
+        return "default";
+    }
 }
