@@ -1,6 +1,10 @@
 package com.example.orderyurt.Pay;
 
-public class SplitPay implements Pay {
+class SoloDecorator extends PayDecorator {
+    public SoloDecorator(Pay pay){
+        super(pay);
+    }
+
     @Override
     public boolean verifyCard(float cardNum, int csv) {
         return false;
@@ -11,8 +15,7 @@ public class SplitPay implements Pay {
         return false;
     }
 
-    @Override
-    public String getPaymentInfo() {
-        return null;
+    public String getPaymentInfo(){
+        return super.getPaymentInfo() + "\n- Paying Solo";
     }
 }

@@ -1,6 +1,6 @@
 package com.example.orderyurt.Pay;
 
-public class SplitPay implements Pay {
+public class SoloPay implements Pay {
     @Override
     public boolean verifyCard(float cardNum, int csv) {
         return false;

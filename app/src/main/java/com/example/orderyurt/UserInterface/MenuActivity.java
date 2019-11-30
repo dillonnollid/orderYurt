@@ -44,7 +44,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> l, View v, int position, long id) {
                 Log.i("HelloListView", "You clicked Item: " + id + " at position:" + position);
-                // Then you start a new Activity via Intent
+
                 Intent intent = new Intent();
                 intent.setClass(MenuActivity.this, BasketActivity.class);
                 intent.putExtra("position", position);
