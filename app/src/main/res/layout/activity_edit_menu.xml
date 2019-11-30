@@ -12,7 +12,7 @@
         android:layout_height="60dp"
         android:background="#009688"
         android:fontFamily="sans-serif"
-        android:text="@string/edit_menu"
+        android:text="@string/EditMenu"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#FFFFFF"
@@ -23,7 +23,7 @@
         android:id="@+id/addItemBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_item" />
+        android:text="@string/additem" />
 
     <ListView
         android:id="@+id/listView2"

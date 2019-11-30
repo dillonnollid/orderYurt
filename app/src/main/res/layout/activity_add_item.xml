@@ -15,7 +15,7 @@
             android:layout_height="60dp"
             android:background="#009688"
             android:fontFamily="sans-serif"
-            android:text="@string/add_item"
+            android:text="@string/additem"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#FFFFFF"
@@ -92,7 +92,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#4CAF50"
             android:backgroundTintMode="src_over"
-            android:text="@string/add_coupon" />
+            android:text="@string/additem"
+            android:onClick="addItemBtnClicked"/>
 
 
     </LinearLayout>

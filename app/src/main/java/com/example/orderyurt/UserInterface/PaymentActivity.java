@@ -25,8 +25,7 @@ public class PaymentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
         c1 = (EditText)findViewById(R.id.cardField);
         c2 =(EditText)findViewById(R.id.cvvField);
 

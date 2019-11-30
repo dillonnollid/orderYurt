@@ -15,11 +15,11 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".PaymentActivity"
-            android:label="@string/title_activity_payment"
+            android:label="@string/titlePayment"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".BasketActivity"
-            android:label="@string/title_activity_basket"
+            android:label="@string/baketTitle"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.example.orderyurt.Login.LoginActivity"
@@ -42,6 +42,7 @@
         <activity android:name=".RestaurantPageActivity" />
         <activity android:name=".CreateCouponActivity" />
         <activity android:name=".ViewRestaurantPageActivity" />
+        <activity android:name=".AddItemActivity" />
     </application>
 
 </manifest>

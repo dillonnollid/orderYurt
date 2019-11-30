@@ -3,66 +3,52 @@ package com.example.orderyurt.UserInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.orderyurt.Model.addItemModel;
+import com.example.orderyurt.Model.addItemModelDelegate;
 
-import com.example.orderyurt.Accounts.RestaurantUser;
-import com.example.orderyurt.Discount.Coupon;
-import com.example.orderyurt.Menu.Item;
-
-public class AddItemActivity extends AppCompatActivity {
+public class AddItemActivity extends AppCompatActivity implements addItemModelDelegate {
     private String itemName, itemDesc;
     private Double itemPrice;
-    private Item newItem;
-    private RestaurantUser rUser;
+
+    private addItemModel model = new addItemModel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
 
-        rUser = new RestaurantUser();
-        Button addItemBtn;
-        EditText name, desc, price;
+        itemName    = ((EditText) findViewById(R.id.itemName)).getText().toString();
+        itemDesc    = ((EditText) findViewById(R.id.itemDesc)).getText().toString();
+        String price    = ((EditText) findViewById(R.id.itemPrice)).getText().toString();
 
-        addItemBtn  = findViewById(R.id.addItemBtn1);
-        name        = findViewById(R.id.itemName);
-        desc        = findViewById(R.id.itemDesc);
-        price       = findViewById(R.id.itemPrice);
-
-
-        itemName    = name.getText().toString();
-        itemDesc    = desc.getText().toString();
-
-        String v    = price.getText().toString();
-        if (!v.isEmpty()) {
-            try {
-                itemPrice = Double.parseDouble(v);
-                // it means it is double
-            } catch (Exception e1) {
-                // this means it is not double
-                e1.printStackTrace();
-            }
+        if (!price.isEmpty()) {
+            try { itemPrice = Double.parseDouble(price); }
+            catch (Exception e1) { e1.printStackTrace(); }
         }
+        model.setDelegate(this);
+    }
 
-        //Creates a new item and adds it to the Menu
-        addItemBtn.setOnClickListener(
-                new View.OnClickListener() {
-                    public void onClick(View view) {
-                        newItem = new Item(itemName,itemDesc,itemPrice);
-                        rUser.getMenu().addItem(newItem);
 
-                        Toast.makeText(AddItemActivity.this, "Item Added.",
-                                Toast.LENGTH_LONG).show();
+    /**
+     * This method is called when the addItem button is clicked.
+     * It passes the user input to the model class using the addItem method.
+     * */
+    public void addItemBtnClicked(View v) {
+        model.addItem(itemName, itemDesc, itemPrice);
+        Toast.makeText(AddItemActivity.this, "Item Added.", Toast.LENGTH_LONG).show();
+    }
 
-                        Intent myIntent = new Intent(AddItemActivity.this, EditMenuActivity.class);
-                        AddItemActivity.this.startActivity(myIntent);
-                    }
-                });
-
+    /**
+     * This method navigates the user back to the edit menu activity.
+     * */
+    @Override
+    public void goToEditMenuActivity(){
+        Intent myIntent = new Intent(AddItemActivity.this, EditMenuActivity.class);
+        AddItemActivity.this.startActivity(myIntent);
     }
 
 }

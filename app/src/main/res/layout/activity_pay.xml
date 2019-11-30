@@ -30,7 +30,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="32dp"
         android:onClick="soloClick"
-        android:text="Solo Pay"
+        android:text="@string/soloPay"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -41,7 +41,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="36dp"
         android:onClick="splitClick"
-        android:text="Split Pay"
+        android:text="@string/splitPay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:text="@string/textView"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         tools:layout_editor_absoluteX="0dp" />
@@ -62,12 +62,14 @@
         android:layout_marginTop="216dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Please enter 16 Digit Card Number"
+        android:text="@string/enterCardDetails"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/cvvField"
@@ -76,12 +78,14 @@
         android:layout_marginTop="60dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Please enter 3-Digit CVV Number"
+        android:text="@string/enter_cardDetails"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardField" />
+        app:layout_constraintTop_toBottomOf="@+id/cardField"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/completePaymentButton"
@@ -89,7 +93,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="80dp"
         android:onClick="completeClicked"
-        android:text="Complete Payment"
+        android:text="@string/completepay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
