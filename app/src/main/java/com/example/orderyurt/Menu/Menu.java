@@ -1,16 +1,20 @@
 package com.example.orderyurt.Menu;
 
+import java.util.ArrayList;
+
 public class Menu {
     private String menuID;
-    private String menuName;
-    private String menuDesc;
-    private Item[] items;
+    private ArrayList<Item> items;
 
-    public void addItem( String itemID ){
-
+    public Menu(){
+        items = new ArrayList<Item>();
     }
 
-    public Item[] getItems(){
+    public void addItem( Item itemID ){
+        items.add(itemID);
+    }
+
+    public ArrayList<Item> getItems(){
         return items;
     }
 }

@@ -19,14 +19,12 @@ import java.util.Date;
 
 public class CreateCouponActivity extends AppCompatActivity {
     //Create coupon object and add it to db for this restaurant
-    RestaurantUser rUser = new RestaurantUser();
-    Coupon newCoupon;
-    Button addCouponBtn;
-    EditText title, code, value, startDate, endDate;
-    DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-    Date eDate, sDate;
-    Double  cValue = 0.0;
-    String cCode, cTitle;
+    private RestaurantUser rUser = new RestaurantUser();
+    private Coupon newCoupon;
+    private DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    private Date eDate, sDate;
+    private Double  cValue = 0.0;
+    private String cCode, cTitle;
 
 
     @Override
@@ -35,7 +33,9 @@ public class CreateCouponActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_coupon);
 
         //Grabbing the input from the EditText boxes
-        addCouponBtn = (Button) findViewById(R.id.addCouponBtn);
+        EditText title, code, value, startDate, endDate;
+        Button addCouponBtn = (Button) findViewById(R.id.addCouponBtn);
+
         title = (EditText) findViewById(R.id.title);
         code = (EditText) findViewById(R.id.code);
         value = findViewById(R.id.value);

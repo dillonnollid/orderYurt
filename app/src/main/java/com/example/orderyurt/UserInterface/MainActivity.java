@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     //Show list of restaurants
     //Show list of tables for specified restaurant
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -41,5 +41,15 @@ public class RestaurantPageActivity extends AppCompatActivity {
                     }
                 });
 
+        menuBtn.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    public void onClick(View view)
+                    {
+                        Intent myIntent = new Intent(RestaurantPageActivity.this, EditMenuActivity.class);
+                        RestaurantPageActivity.this.startActivity(myIntent);
+                    }
+                });
+
     }
 }

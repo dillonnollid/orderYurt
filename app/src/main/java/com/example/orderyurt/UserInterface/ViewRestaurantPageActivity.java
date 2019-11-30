@@ -24,28 +24,27 @@ public class ViewRestaurantPageActivity extends AppCompatActivity {
     //Need to get the restaurant based on which restaurant page we are on
     RestaurantUser rUser = new RestaurantUser();
 
-    Button unSubscribeBtn;
-    Button menuBtn;
-    Button subscribeBtn;
+    private Button subscribeBtn, menuBtn, unSubscribeBtn;
+    private TextView restPage;
 
-    String rest = "";
+    private String rest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_rest_page);
-
-        Intent i = getIntent();
-        Bundle b = i.getExtras();
-
-        rest = b.getString("restName");
-        TextView restPage;
-        restPage = (TextView) findViewById(R.id.restPage);
-        restPage.setText(rest);
 
         subscribeBtn = findViewById(R.id.subBtn);
         menuBtn = findViewById(R.id.menuBtn1);
         unSubscribeBtn = findViewById(R.id.unSubBtn);
+
+        Intent i = getIntent();
+        Bundle b = i.getExtras();
+        rest = b.getString("restName");
+
+        restPage = (TextView) findViewById(R.id.restPage);
+        restPage.setText(rest);
+
+
 
 
         /*
