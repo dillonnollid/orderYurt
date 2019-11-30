@@ -2,12 +2,13 @@ package com.example.orderyurt.Accounts;
 
 public class GoldCustomer extends CustomerUser {
 
+    private String customerType = "gold";
+
     public GoldCustomer(){
         super();
     }
 
-    private String customerType = "gold";
-
+    @Override
     public String getCustomerType(){
         return customerType;
     }
