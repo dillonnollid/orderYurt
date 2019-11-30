@@ -9,10 +9,34 @@ public class CustomerUser implements User, Subscriber{
     private String customerName;
     private ArrayList<Coupon> coupons;
 
+    public CustomerUser(){
+
+    }
+
     @Override
     public void update(Coupon coupon){
         if(!coupons.contains(coupon)) {
             this.coupons.add(coupon);
         }
+    }
+
+    public void setCustomerID(int cID){
+        this.customerID = cID;
+    }
+
+    public int getCustomerID(){
+        return this.customerID;
+    }
+
+    public void setCustomerName(String cName){
+        this.customerName = cName;
+    }
+
+    public String getCustomerName(){
+        return this.customerName;
+    }
+
+    public String getCustomerType(){
+        return "default";
     }
 }
