@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Bundle extras = new Bundle();
-                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                Intent intent = new Intent(MainActivity.this, OrderActivity.class);
                 extras.putString("restaurantClicked", spinner.getSelectedItem().toString());
                 intent.putExtras(extras);
                 System.out.println("In the button click now");
