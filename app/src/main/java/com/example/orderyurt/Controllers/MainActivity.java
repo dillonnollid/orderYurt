@@ -1,4 +1,4 @@
-package com.example.orderyurt.UserInterface;
+package com.example.orderyurt.Controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,11 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-
+//TODO: ADD MVC!!
 public class MainActivity extends AppCompatActivity {
     //Show list of restaurants
     //Show list of tables for specified restaurant
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -18,4 +18,20 @@ public class Coupon {
         this.endDate = endDate;
         this.RID = RID;
     }
+
+    public Double getValue(){
+        return this.value;
+    }
+
+    public String getCode(){
+        return code;
+    }
+
+    public Date getStartDate(){
+        return startDate;
+    }
+
+    public Date getEndDate(){
+        return endDate;
+    }
 }

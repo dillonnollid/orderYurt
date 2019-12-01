@@ -4,8 +4,8 @@ public class SilverCustomer extends CustomerUser {
 
     private String customerType = "silver";
 
-    public SilverCustomer(){
-        super();
+    public SilverCustomer(String customerName, String customerEmail){
+        super(customerName,customerEmail);
     }
 
     @Override

@@ -23,8 +23,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.orderyurt.UserInterface.MainActivity;
-import com.example.orderyurt.UserInterface.R;
+import com.example.orderyurt.Controllers.MainActivity;
+import com.example.orderyurt.Controllers.R;
 
 
 public class LoginActivity extends AppCompatActivity {

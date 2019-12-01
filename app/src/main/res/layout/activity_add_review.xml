@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserInterface.AddReviewActivity">
+    tools:context=".AddReviewActivity">
 
     <TextView
         android:id="@+id/reviewText"
@@ -29,7 +29,7 @@
         android:numStars="5" />
 
     <EditText
-        android:id="@+id/reviewName"
+        android:id="@+id/reviewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -37,7 +37,7 @@
         android:text="Title" />
 
     <EditText
-        android:id="@+id/reviewDesc"
+        android:id="@+id/reviewDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -53,6 +53,7 @@
         android:background="#E91E63"
         android:text="Add "
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="addReviewBtnClicked"/>
 
 </LinearLayout>
