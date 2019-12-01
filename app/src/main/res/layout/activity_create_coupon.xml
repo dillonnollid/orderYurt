@@ -133,7 +133,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#4CAF50"
             android:backgroundTintMode="src_over"
-            android:text="@string/add_coupon" />
+            android:text="@string/add_coupon"
+            android:onClick="addCouponBtnClicked"/>
 
 
     </LinearLayout>

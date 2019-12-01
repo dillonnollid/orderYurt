@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.orderyurt.UserInterface">
+    package="com.example.orderyurt.Controllers">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,11 +14,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".PaymentActivity"
+            android:name="com.example.orderyurt.Controllers.PaymentActivity"
             android:label="@string/titlePayment"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BasketActivity"
+            android:name="com.example.orderyurt.Controllers.BasketActivity"
             android:label="@string/baketTitle"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -30,19 +30,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".AddReviewActivity" />
-        <activity android:name=".CustomerPageActivity" />
-        <activity android:name=".EditMenuActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".RegisterCustomerActivity" />
-        <activity android:name=".RegisterRestaurantActivity" />
-        <activity android:name=".ReviewsListActivity" />
-        <activity android:name=".SplitPayActivity" />
-        <activity android:name=".RestaurantPageActivity" />
-        <activity android:name=".CreateCouponActivity" />
-        <activity android:name=".ViewRestaurantPageActivity" />
-        <activity android:name=".AddItemActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.MainActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.AddReviewActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.CustomerPageActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.EditMenuActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.MenuActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.RegisterCustomerActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.RegisterRestaurantActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.ReviewsListActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.SplitPayActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.RestaurantPageActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.CreateCouponActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.ViewRestaurantPageActivity" />
+        <activity android:name="com.example.orderyurt.Controllers.AddItemActivity" />
     </application>
 
 </manifest>

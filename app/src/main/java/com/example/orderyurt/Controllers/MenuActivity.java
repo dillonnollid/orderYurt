@@ -1,26 +1,19 @@
-package com.example.orderyurt.UserInterface;
+package com.example.orderyurt.Controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.orderyurt.Menu.Item;
-
+//TODO: ADD MVC!!
 public class MenuActivity extends AppCompatActivity {
-    //Show list of items for this restaurant
-    //Add item to basket
-    //Go to basket
     String rest = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +41,6 @@ public class MenuActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MenuActivity.this, BasketActivity.class);
                 intent.putExtra("position", position);
-                // Or / And
                 intent.putExtra("id", id);
                 startActivity(intent);
             }

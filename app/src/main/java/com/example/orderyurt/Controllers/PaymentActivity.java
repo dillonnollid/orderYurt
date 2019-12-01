@@ -1,4 +1,4 @@
-package com.example.orderyurt.UserInterface;
+package com.example.orderyurt.Controllers;
 
 import android.os.Bundle;
 
@@ -6,18 +6,14 @@ import com.example.orderyurt.Pay.BasePay;
 import com.example.orderyurt.Pay.Pay;
 import com.example.orderyurt.Pay.SoloDecorator;
 import com.example.orderyurt.Pay.SplitDecorator;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-//import com.example.orderyurt.R;
-
+//TODO: ADD MVC!!
 public class PaymentActivity extends AppCompatActivity {
     private String cardNum, cvvNum, choice;
     View c1,c2;// = (EditText)findViewById(R.id.cardField),c2 =(EditText)findViewById(R.id.cvvField) ;

@@ -1,4 +1,4 @@
-package com.example.orderyurt.UserInterface;
+package com.example.orderyurt.Controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,6 +49,7 @@ public class AddItemActivity extends AppCompatActivity implements addItemModelDe
     public void goToEditMenuActivity(){
         Intent myIntent = new Intent(AddItemActivity.this, EditMenuActivity.class);
         AddItemActivity.this.startActivity(myIntent);
+        finish();
     }
 
 }

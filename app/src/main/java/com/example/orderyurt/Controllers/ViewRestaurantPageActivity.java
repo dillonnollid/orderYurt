@@ -1,8 +1,7 @@
-package com.example.orderyurt.UserInterface;
+package com.example.orderyurt.Controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,10 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.orderyurt.Accounts.CustomerUser;
 import com.example.orderyurt.Accounts.RestaurantUser;
-import com.example.orderyurt.Accounts.Subject;
 import com.example.orderyurt.Accounts.Subscriber;
 
-import java.util.Objects;
 
 public class ViewRestaurantPageActivity extends AppCompatActivity {
 

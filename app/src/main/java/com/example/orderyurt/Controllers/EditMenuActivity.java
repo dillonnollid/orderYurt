@@ -1,4 +1,4 @@
-package com.example.orderyurt.UserInterface;
+package com.example.orderyurt.Controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
