@@ -1,6 +1,8 @@
 package com.example.orderyurt.Accounts;
 
 import com.example.orderyurt.Discount.Coupon;
+import com.example.orderyurt.Menu.Item;
+import com.example.orderyurt.Order.Basket;
 
 import java.util.ArrayList;
 
@@ -9,6 +11,7 @@ public class CustomerUser implements User, Subscriber{
     private String customerName;
     private String customerEmail;
     private ArrayList<Coupon> coupons;
+    private Basket basket;
 
     public CustomerUser(String customerName, String customerEmail){
         this.customerName  = customerName;
@@ -48,5 +51,25 @@ public class CustomerUser implements User, Subscriber{
     @Override
     public void setID(int ID) {
         this.customerID = ID;
+    }
+
+    public void setBasket(){
+        this.basket = new Basket(this.customerID);
+    }
+
+    public void addToBasket(Item item){
+        this.basket.addItem(item);
+    }
+
+    public void removeItemInBasket(Item item){
+        this.basket.removeItem(item);
+    }
+
+    public Basket getBasket(){
+        return this.basket;
+    }
+
+    public ArrayList<Coupon> getCoupons(){
+        return this.coupons;
     }
 }

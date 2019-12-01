@@ -13,7 +13,7 @@ public class CustomerFactoryTest {
     @Test
     public void canCreateCustomerUser(){
         CustomerFactory factory = new CustomerFactory();
-        CustomerUser silverCustomer = factory.getUser("silver");
+        CustomerUser silverCustomer = factory.getUser("adam", "test@gmail.com", "silver");
         String result = silverCustomer.getCustomerType();
 
         assertEquals(result, "silver");
