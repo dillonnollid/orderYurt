@@ -9,7 +9,11 @@ import static org.junit.Assert.assertEquals;
 
 public class CustomerFactoryTest {
 
-    //Test that when a new SilverCustomer is created using the CustomerFactory that the customerType is set to silver.
+    /**
+    * Creates a new CustomerFactory. It the uses the factory to create a new silver customer by
+    * creating a regular customer and passing the string "silver" into the getUser method in the factory.
+    * It the asserts that the customer type of that new customer is set to silver.
+     */
     @Test
     public void canCreateCustomerUser(){
         CustomerFactory factory = new CustomerFactory();

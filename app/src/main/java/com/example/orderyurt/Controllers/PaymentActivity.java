@@ -1,5 +1,6 @@
 package com.example.orderyurt.Controllers;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.orderyurt.Pay.BasePay;
@@ -15,12 +16,18 @@ import android.widget.Toast;
 
 //TODO: ADD MVC!!
 public class PaymentActivity extends AppCompatActivity {
-    private String cardNum, cvvNum, choice;
+    private String cardNum, cvvNum, choice, rest, contents;
+    private Double totalprice;
     View c1,c2;// = (EditText)findViewById(R.id.cardField),c2 =(EditText)findViewById(R.id.cvvField) ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        Intent i = getIntent();
+        Bundle b = i.getExtras();
+        rest = b.getString("restName");
+        contents = b.getString("contents");
+        totalprice = b.getDouble("totalprice");
 
         c1 = (EditText)findViewById(R.id.cardField);
         c2 =(EditText)findViewById(R.id.cvvField);
@@ -60,7 +67,12 @@ public class PaymentActivity extends AppCompatActivity {
 
             boolean chance = soloPay.verifyPayment(40);
             //chance = soloPay.verifyCard(cardNum, cvvNum);
-            Toast.makeText(this, ("RESULT IS :") + chance, Toast.LENGTH_LONG).show();
+            if(chance){
+                Toast.makeText(this, "ACCEPTED PAYMENT, ORDER COMPLETE", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "ORDER NOT COMPLETE", Toast.LENGTH_LONG).show();
+            }
+
             /*if(soloPay.verifyCard(cardNum, cvvNum)){
                 if(soloPay.verifyPayment(15)){
                     Toast.makeText(this, "SUCCESSFUL PAYMENT", Toast.LENGTH_LONG).show();

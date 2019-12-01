@@ -28,7 +28,7 @@
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="506dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:entries="@array/testMenu1"
@@ -36,6 +36,13 @@
         tools:layout_editor_absoluteX="-16dp">
 
     </ListView>
+
+    <Button
+        android:id="@+id/orderButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="GO TO BASKET"
+        app:layout_constraintTop_toBottomOf="@+id/listView1"/>
 
 
 </LinearLayout>
