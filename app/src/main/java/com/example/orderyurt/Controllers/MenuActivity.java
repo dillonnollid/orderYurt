@@ -25,7 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * @rest stores the name of the restaurant that was clicked by the user in the previous activity
  * @restPageBtn is used to bring us to the restaurant clicked's page
  * @orderButton will create a new intent when clicked and will send the itemNames to the Order activity
- * @listview combined with @c1 (AdapterView) are used to display items and add items to the itemNames
+ * @listview combined with @c1 (AdapterView) are used to display items and add items to the itemNames array
  */
 public class MenuActivity extends AppCompatActivity {
     String rest = "";
