@@ -9,11 +9,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.orderyurt.Model.addCouponModelDelegate;
+import com.example.orderyurt.Model.DelegateInterfaces;
 import com.example.orderyurt.Model.addReviewModel;
 
 
-public class AddReviewActivity extends AppCompatActivity implements addCouponModelDelegate {
+public class AddReviewActivity extends AppCompatActivity implements DelegateInterfaces.addReviewModelDelegate {
     //Create a Review object and add it to DB for this restaurant
     private EditText title, description;
     private String reviewTitle, reviewDescription;
@@ -48,7 +48,7 @@ public class AddReviewActivity extends AppCompatActivity implements addCouponMod
      * This method navigates the user back to the viewRestaurantPageActivity.
      * */
     @Override
-    public void goToRestPageActivity(){
+    public void goToViewRestPageActivity(){
         Intent myIntent = new Intent(AddReviewActivity.this, ViewRestaurantPageActivity.class);
         AddReviewActivity.this.startActivity(myIntent);
         finish();

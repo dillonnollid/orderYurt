@@ -68,4 +68,8 @@ public class RestaurantUser implements User, Subject{
     public void setID(int ID) {
         this.ID = ID;
     }
+
+    public ArrayList<Subscriber> getSubscribers(){
+        return subscribers;
+    }
 }

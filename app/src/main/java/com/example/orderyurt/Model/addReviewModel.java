@@ -21,7 +21,7 @@ public class addReviewModel {
 
     public void addReview(String title, String desc, float rating){
         newReview = new Review(title, desc, rating);
-        delegate.goToRestPageActivity();
+        delegate.goToViewRestPageActivity();
     }
 
 }

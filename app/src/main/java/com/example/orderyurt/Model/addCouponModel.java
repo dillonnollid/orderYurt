@@ -1,5 +1,6 @@
 package com.example.orderyurt.Model;
 
+
 import com.example.orderyurt.Accounts.RestaurantUser;
 import com.example.orderyurt.Discount.Coupon;
 import com.example.orderyurt.Controllers.CreateCouponActivity;
@@ -19,12 +20,11 @@ public class addCouponModel {
     public void setDelegate(CreateCouponActivity d) {
         this.delegate = d;
     }
-
-    //TODO: Make an email go out to all the subscribers.
     public void createCoupon(String title, String code, Double value, Date sDate, Date eDate, int RID){
         newCoupon = new Coupon(title, code, value, sDate, eDate, RID);
         rUser.notifySubscribers(newCoupon);
         delegate.goToRestPageActivity();
     }
+
 
 }
