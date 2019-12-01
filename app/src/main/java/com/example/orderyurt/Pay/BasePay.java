@@ -4,7 +4,7 @@ public class BasePay implements Pay {
     private String cardNum, cvvNum, res="";
     private boolean valid=false;
     @Override
-    public boolean verifyCard(String cardNum, String cvv) {
+    public boolean verifyCard(String cardNum, String cvvNum) {
         if(cardNum.length() > 16){
             //Toast.MakeText((this.Activity), Resource.String.sent, ToastLength.Long).Show();
             //Toast.makeText((this.Activity), "INVALID CARD NUMBER: OVER 16 DIGITS", Toast.LENGTH_LONG).show();
@@ -21,7 +21,7 @@ public class BasePay implements Pay {
                 res+= "CVV NUMBER IS UNDER 3 DIGITS IN LENGTH\n";
                 //Toast.makeText(this, "INVALID CVV NUMBER: UNDER 3 DIGITS", Toast.LENGTH_LONG).show();
             } else {
-                //only return true if cardNum = 16 and cvv =
+                //only return true if cardNum = 16 and cvv = 3
                 res+="Everything looks good with the cardnumber and cvv\n";
                 this.cardNum = cardNum;
                 this.cvvNum = cvvNum;
