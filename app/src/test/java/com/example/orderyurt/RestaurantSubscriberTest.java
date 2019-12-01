@@ -24,31 +24,41 @@ public class RestaurantSubscriberTest {
     private RestaurantUser restaurant;
     private CustomerFactory factory;
     private CustomerUser customer;
-    ArrayList<Coupon> coupons;
+    ArrayList<Subscriber> subs;
 
 
-
+    /**
+     * Instantiates the restaurant, CustomerFactory and GoldCustomer.
+     * Adds the customer as a new subscriber to the restaurant.
+     * Instantiates the subs arrayList to hold all the restaurants subscribers.
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception{
 
         restaurant = new RestaurantUser();
         factory = new CustomerFactory();
         customer = factory.getUser("benjamin", "test@gmail.com", "gold");
+        restaurant.addSubscriber(customer);
+        subs = restaurant.getSubscribers();
     }
 
+    /**
+     * Asserts that the customer is on the arrayList of subscribers, verifying
+     * that the addSubscriber method is working.
+     */
     @Test
     public void restaurantUser_makeNewSubscriber() {
-
-        restaurant.addSubscriber(customer);
-        ArrayList<Subscriber> subs = restaurant.getSubscribers();
         assertEquals(subs.get(0), customer);
     }
 
+    /**
+     * Calls the removeSubscriber method from the restaurant, passing in the customer.
+     * This will remove the customer as a subscriber.
+     * Asserts that the length of the subs arrayList is 0, verifying that the subscriber was removed.
+     */
     @Test
     public void restaurantUser_removeASubscriber() {
-
-        restaurant.addSubscriber(customer);
-        ArrayList<Subscriber> subs = restaurant.getSubscribers();
         restaurant.removeSubscriber(customer);
         assertEquals(subs.size(), 0);
     }
