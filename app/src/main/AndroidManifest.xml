@@ -39,7 +39,6 @@
         <activity android:name=".RegisterCustomerActivity" />
         <activity android:name=".RegisterRestaurantActivity" />
         <activity android:name=".ReviewsListActivity" />
-        <activity android:name=".SplitPayActivity" />
         <activity android:name=".RestaurantPageActivity" />
         <activity android:name=".CreateCouponActivity" />
         <activity android:name=".ViewRestaurantPageActivity" />

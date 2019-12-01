@@ -68,8 +68,4 @@ public class CustomerUser implements User, Subscriber{
     public Basket getBasket(){
         return this.basket;
     }
-
-    public ArrayList<Coupon> getCoupons(){
-        return this.coupons;
-    }
 }

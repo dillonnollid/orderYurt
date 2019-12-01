@@ -14,7 +14,6 @@ import com.example.orderyurt.Model.addReviewModel;
 
 
 public class AddReviewActivity extends AppCompatActivity implements DelegateInterfaces.addReviewModelDelegate {
-    //Create a Review object and add it to DB for this restaurant
     private EditText title, description;
     private String reviewTitle, reviewDescription;
     private RatingBar ratingBar;
@@ -38,6 +37,10 @@ public class AddReviewActivity extends AppCompatActivity implements DelegateInte
         model.setDelegate(this);
     }
 
+    /**
+     * This method calls the addReview function in the model class.
+     * Shows the user a success message.
+     */
     public void addReviewBtnClicked(View view) {
         model.addReview(reviewTitle, reviewDescription, rating);
         Toast.makeText(AddReviewActivity.this, R.string.review_added,
@@ -46,7 +49,7 @@ public class AddReviewActivity extends AppCompatActivity implements DelegateInte
 
     /**
      * This method navigates the user back to the viewRestaurantPageActivity.
-     * */
+     */
     @Override
     public void goToViewRestPageActivity(){
         Intent myIntent = new Intent(AddReviewActivity.this, ViewRestaurantPageActivity.class);
