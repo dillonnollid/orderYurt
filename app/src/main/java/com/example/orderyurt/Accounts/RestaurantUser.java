@@ -2,11 +2,13 @@ package com.example.orderyurt.Accounts;
 
 import com.example.orderyurt.Discount.Coupon;
 import com.example.orderyurt.Menu.Menu;
+import com.example.orderyurt.Review.Review;
 
 import java.util.ArrayList;
 
 public class RestaurantUser implements User, Subject{
     private ArrayList<Subscriber> subscribers;
+    private ArrayList<Review> reviews;
     private String address;
     private String name;
     private int [] tables;
@@ -39,6 +41,10 @@ public class RestaurantUser implements User, Subject{
         for(Subscriber subscriber : this.subscribers){
             subscriber.update(coupon);
         }
+    }
+
+    public void addReview(Review review){
+        reviews.add(review);
     }
 
 }
