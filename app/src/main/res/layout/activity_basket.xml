@@ -13,7 +13,6 @@
             android:id="@+id/basketList"
             android:layout_width="424dp"
             android:layout_height="450dp"
-            android:entries="@array/testMenu1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
