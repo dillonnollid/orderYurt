@@ -25,7 +25,7 @@ public class OrderActivity extends AppCompatActivity {
         Bundle b = i.getExtras();
         String items = b.getString("orderList");
         Double price = b.getDouble("totalprice");
-        
+
         TextView contents = findViewById(R.id.basketList);
         TextView basketPrice = findViewById(R.id.basketPrice);
         basketPrice.setText("Total cost of basket is " + String.valueOf(price));
