@@ -26,6 +26,10 @@ public class CustomerUser implements User, Subscriber{
         return "default";
     }
 
+    public ArrayList<Coupon> getCoupons(){
+        return coupons;
+    }
+
     @Override
     public String getName() {
         return customerName;

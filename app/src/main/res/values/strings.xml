@@ -58,6 +58,8 @@
     <string name="baketTitle">Basket</string>
     <string name="EditMenu">Edit Menu</string>
     <string name="review_added">Add Review</string>
+    <string name="logout">Log out</string>
+    <string name="subscriptions">Subscriptions</string>
 
     <string-array name="testMenu1">
         <item>6 Chicken Wings</item>

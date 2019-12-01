@@ -7,10 +7,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.orderyurt.Model.addItemModel;
-import com.example.orderyurt.Model.addItemModelDelegate;
 
-public class AddItemActivity extends AppCompatActivity implements addItemModelDelegate {
+import com.example.orderyurt.Model.DelegateInterfaces;
+import com.example.orderyurt.Model.addItemModel;
+
+public class AddItemActivity extends AppCompatActivity implements DelegateInterfaces.addItemModelDelegate {
     private String itemName, itemDesc;
     private Double itemPrice;
 

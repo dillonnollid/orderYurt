@@ -1,5 +1,6 @@
 package com.example.orderyurt.Controllers;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,14 +9,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.orderyurt.Model.DelegateInterfaces;
 import com.example.orderyurt.Model.addCouponModel;
-import com.example.orderyurt.Model.addCouponModelDelegate;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CreateCouponActivity extends AppCompatActivity implements addCouponModelDelegate {
+public class CreateCouponActivity extends AppCompatActivity implements DelegateInterfaces.addCouponModelDelegate {
     //Create coupon object and add it to db for this restaurant
 
     private DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -69,4 +70,5 @@ public class CreateCouponActivity extends AppCompatActivity implements addCoupon
         CreateCouponActivity.this.startActivity(myIntent);
         finish();
     }
+
 }
