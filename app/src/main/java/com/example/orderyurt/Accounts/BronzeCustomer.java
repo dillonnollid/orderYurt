@@ -4,8 +4,8 @@ public class BronzeCustomer extends CustomerUser {
 
     private String customerType = "bronze";
 
-    public BronzeCustomer(){
-        super();
+    public BronzeCustomer(String customerName, String customerEmail){
+        super(customerName,customerEmail);
     }
 
     @Override

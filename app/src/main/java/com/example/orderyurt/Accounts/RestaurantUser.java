@@ -11,6 +11,8 @@ public class RestaurantUser implements User, Subject{
     private ArrayList<Review> reviews;
     private String address;
     private String name;
+    private String email;
+    private int ID;
     private int [] tables;
     private Menu menu;
 
@@ -47,4 +49,23 @@ public class RestaurantUser implements User, Subject{
         reviews.add(review);
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public int getID() {
+        return ID;
+    }
+
+    @Override
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 }

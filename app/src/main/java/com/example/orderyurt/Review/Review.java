@@ -10,4 +10,16 @@ public class Review {
         this.reviewDescription = description;
         this.rating = rate;
     }
+
+    public String getReviewTitle(){
+        return reviewTitle;
+    }
+
+    public String getReviewDescription(){
+        return reviewDescription;
+    }
+
+    public float getReviewRating(){
+        return rating;
+    }
 }

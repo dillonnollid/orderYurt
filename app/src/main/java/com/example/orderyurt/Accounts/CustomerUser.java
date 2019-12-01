@@ -7,10 +7,12 @@ import java.util.ArrayList;
 public class CustomerUser implements User, Subscriber{
     private int customerID;
     private String customerName;
+    private String customerEmail;
     private ArrayList<Coupon> coupons;
 
-    public CustomerUser(){
-
+    public CustomerUser(String customerName, String customerEmail){
+        this.customerName  = customerName;
+        this.customerEmail = customerEmail;
     }
 
     @Override
@@ -20,23 +22,27 @@ public class CustomerUser implements User, Subscriber{
         }
     }
 
-    public void setCustomerID(int cID){
-        this.customerID = cID;
-    }
-
-    public int getCustomerID(){
-        return this.customerID;
-    }
-
-    public void setCustomerName(String cName){
-        this.customerName = cName;
-    }
-
-    public String getCustomerName(){
-        return this.customerName;
-    }
-
     public String getCustomerType(){
         return "default";
+    }
+
+    @Override
+    public String getName() {
+        return customerName;
+    }
+
+    @Override
+    public String getEmail() {
+        return customerEmail;
+    }
+
+    @Override
+    public int getID() {
+        return customerID;
+    }
+
+    @Override
+    public void setID(int ID) {
+        this.customerID = ID;
     }
 }

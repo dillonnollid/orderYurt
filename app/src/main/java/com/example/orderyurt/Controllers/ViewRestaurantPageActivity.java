@@ -16,7 +16,7 @@ import com.example.orderyurt.Accounts.Subscriber;
 public class ViewRestaurantPageActivity extends AppCompatActivity {
 
     //This is a random user object, need to get the logged in user
-    Subscriber user = new CustomerUser();
+    Subscriber user = new CustomerUser("Jane","Doe");
 
     //Need to get the restaurant based on which restaurant page we are on
     RestaurantUser rUser = new RestaurantUser();

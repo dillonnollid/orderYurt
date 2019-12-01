@@ -8,6 +8,6 @@ public interface Subject {
 
     void removeSubscriber(Subscriber subscriber);
 
-    public void notifySubscribers(Coupon coupon);
+    void notifySubscribers(Coupon coupon);
 
 }

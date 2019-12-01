@@ -59,7 +59,7 @@ public class CreateCouponActivity extends AppCompatActivity implements addCoupon
     //TODO: The RID here should be the ID of the logged in user
     public void addCouponBtnClicked(View v) {
         model.createCoupon(cTitle, cCode, cValue, sDate, eDate, 1);
-        Toast.makeText(CreateCouponActivity.this, R.string.notifySubs,
+        Toast.makeText(CreateCouponActivity.this, "Subscribers have been notified.",
                 Toast.LENGTH_LONG).show();
     }
 
