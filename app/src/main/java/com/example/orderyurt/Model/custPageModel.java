@@ -40,6 +40,4 @@ public class custPageModel {
     public void setUsername(){
         delegate.setTitle(this.cUser.getName());
     }
-
-
 }

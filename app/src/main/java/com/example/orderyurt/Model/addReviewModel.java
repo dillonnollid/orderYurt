@@ -37,5 +37,4 @@ public class addReviewModel {
         rUser.addReview(newReview);
         delegate.goToViewRestPageActivity();
     }
-
 }

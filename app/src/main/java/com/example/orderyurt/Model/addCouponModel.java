@@ -42,6 +42,4 @@ public class addCouponModel {
         rUser.notifySubscribers(newCoupon);
         delegate.goToRestPageActivity();
     }
-
-
 }

@@ -8,5 +8,4 @@ public interface Pay {
     void setPaymentInfo(String cardNum, String cvv);
     boolean result=false;
 
-
 }
