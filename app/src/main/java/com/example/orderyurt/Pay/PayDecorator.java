@@ -6,11 +6,9 @@ public abstract class PayDecorator implements Pay {
     public PayDecorator(BasePay pay) {
         this.decoratedPay = pay;
     }
-
     public String getPaymentInfo(){
         return decoratedPay.getPaymentInfo();
     }
-
     public void setPaymentInfo(String cardNum, String cvv){
         decoratedPay.setPaymentInfo(cardNum, cvv);
     }

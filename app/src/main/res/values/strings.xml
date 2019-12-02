@@ -61,10 +61,11 @@
     <string name="logout">Log out</string>
     <string name="subscriptions">Subscriptions</string>
     <string name="orderp">OrderUp!</string>
+    <string name="viewAccount">VIEW ACCOUNT</string>
 
     <string-array name="testMenu1">
         <item>6 Chicken Wings</item>
-        <item>12 Nuggest</item>
+        <item>12 Nuggets</item>
         <item>Big Bobs BBQ Burger</item>
         <item>Pizza</item>
         <item>CocaCola</item>

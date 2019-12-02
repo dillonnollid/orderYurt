@@ -7,7 +7,6 @@ public class BasePay implements Pay {
     public boolean verifyCard(String cardNum, String cvvNum) {
         if(cardNum.length() > 16){
             res+= "CARD NUMBER IS OVER 16 DIGITS IN LENGTH\n";
-
         } else if(cardNum.length() < 16){
             //Toast.makeText(this, "INVALID CARD NUMBER: UNDER 16 DIGITS", Toast.LENGTH_LONG).show();
             res+= "CARD NUMBER IS UNDER 16 DIGITS IN LENGTH\n";
@@ -26,7 +25,6 @@ public class BasePay implements Pay {
                 valid=true;
                 return true;
             }
-
         }
         System.out.println(res);
         return false;
