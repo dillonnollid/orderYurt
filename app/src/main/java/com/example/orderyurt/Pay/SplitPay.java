@@ -9,11 +9,6 @@ public class SplitPay implements Pay {
     }
 
     @Override
-    public boolean isCardValid() {
-        return false;
-    }
-
-    @Override
     public boolean verifyPayment(int amount) {
         return false;
     }

@@ -21,6 +21,11 @@ import java.util.ArrayList;
  * OrderActivity summarises the order and displays it's information to the user.
  * If the user is satisfied, they can click the Pay button to be brought to the PaymentActivity
  * @rest gets the restaurant name from the bundle, final so it can be used in Anonymous classes
+ * @items gets the string containing the order items from the bundle
+ * @price gets the total price of the order from the bundle
+ * @contents displays the order list to the user
+ * @basketPrice displays the total price to the user
+ * @payButton creates an intent to go to PaymentActivity and attaches the relevant objects to the bundle
  */
 public class OrderActivity extends AppCompatActivity {
 
