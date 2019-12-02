@@ -17,7 +17,11 @@ import android.widget.Toast;
 //TODO: ADD MVC!!
 
 /**
- * PaymentActivity class creates Payment Menu and
+ * PaymentActivity class creates Payment Menu and options for Solo or Split pay
+ * User clicks button for either Solo or Split pay, text boxes appear for credit card details
+ * both boxes only accept a number, and if the card number is invalid it will return a Toast error
+ * If user decides to split pay, there total cost will be reduced
+ * 
  */
 public class PaymentActivity extends AppCompatActivity {
     private String cardNum, cvvNum, choice, rest, contents;
@@ -34,7 +38,7 @@ public class PaymentActivity extends AppCompatActivity {
         totalprice = b.getDouble("totalprice");
 
         c1 = (EditText)findViewById(R.id.cardField);
-        c2 =(EditText)findViewById(R.id.cvvField);
+        c2 = (EditText)findViewById(R.id.cvvField);
 
         c1.setVisibility(View.GONE);
         c2.setVisibility(View.GONE);
@@ -54,7 +58,7 @@ public class PaymentActivity extends AppCompatActivity {
         choice = "split";
         View b = findViewById(R.id.soloButton);
         b.setVisibility(View.GONE);
-
+        totalprice = totalprice / 4;
         c1.setVisibility(View.VISIBLE);
         c2.setVisibility(View.VISIBLE);
     }
@@ -70,12 +74,12 @@ public class PaymentActivity extends AppCompatActivity {
 
             if(soloPay.verifyCard(cardNum, cvvNum)){
                 if(soloPay.verifyPayment(totalprice.intValue())){
-                    Toast.makeText(this, "SUCCESSFUL PAYMENT", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(this, MainActivity.class);
+                    Toast.makeText(this, "SUCCESSFUL SOLO PAYMENT", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, AddReviewActivity.class);
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(this, "COULD NOT VERIFY PAYMENT", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "COULD NOT VERIFY SOLO PAYMENT", Toast.LENGTH_LONG).show();
                 }
             }
             else {
@@ -84,7 +88,20 @@ public class PaymentActivity extends AppCompatActivity {
         }
         else if(choice=="split"){
             Pay splitPay = new SplitDecorator(new BasePay());
-            Toast.makeText(this, "CREATED SPLITPAY", Toast.LENGTH_LONG).show();
+
+            if(splitPay.verifyCard(cardNum, cvvNum)){
+                if(splitPay.verifyPayment(totalprice.intValue())){
+                    Toast.makeText(this, "SUCCESSFUL SPLIT PAYMENT", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, AddReviewActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(this, "COULD NOT VERIFY SPLIT PAYMENT", Toast.LENGTH_LONG).show();
+                }
+            }
+            else {
+                Toast.makeText(this, "COULD NOT VERIFY CARD", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }

@@ -43,8 +43,10 @@ public class AddReviewActivity extends AppCompatActivity implements DelegateInte
      */
     public void addReviewBtnClicked(View view) {
         model.addReview(reviewTitle, reviewDescription, rating);
-        Toast.makeText(AddReviewActivity.this, R.string.review_added,
+        Toast.makeText(AddReviewActivity.this, "Review Added Successfully",
                 Toast.LENGTH_LONG).show();
+        Intent myIntent = new Intent(AddReviewActivity.this, MainActivity.class);
+        AddReviewActivity.this.startActivity(myIntent);
     }
 
     /**
