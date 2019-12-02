@@ -62,6 +62,8 @@
     <string name="subscriptions">Subscriptions</string>
     <string name="orderp">OrderUp!</string>
     <string name="viewAccount">VIEW ACCOUNT</string>
+    <string name="basketa">Basket</string>
+    <string name="paymenta">Payment</string>
 
     <string-array name="testMenu1">
         <item>6 Chicken Wings</item>
