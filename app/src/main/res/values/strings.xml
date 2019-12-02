@@ -60,16 +60,18 @@
     <string name="review_added">Add Review</string>
     <string name="logout">Log out</string>
     <string name="subscriptions">Subscriptions</string>
+    <string name="orderp">OrderUp!</string>
+    <string name="viewAccount">VIEW ACCOUNT</string>
+    <string name="basketa">Basket</string>
+    <string name="paymenta">Payment</string>
 
     <string-array name="testMenu1">
         <item>6 Chicken Wings</item>
-        <item>12 Nuggest</item>
+        <item>12 Nuggets</item>
         <item>Big Bobs BBQ Burger</item>
-        <item>Spicy Boi x100</item>
-        <item>Bag of bits</item>
-        <item>Ostrich Teste</item>
-        <item>Fried Sourcrout</item>
-        <item>Everything Burns w/Special Sauce</item>
-        <item>Choco Choco Milkshake mmmm</item>
+        <item>Pizza</item>
+        <item>CocaCola</item>
+        <item>Burger</item>
+        <item>Milkshake</item>
     </string-array>
 </resources>

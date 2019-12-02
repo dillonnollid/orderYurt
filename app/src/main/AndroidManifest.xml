@@ -7,13 +7,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_foreground"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".OrderActivity" />
         <activity
             android:name=".PaymentActivity"
             android:label="@string/titlePayment"
@@ -24,7 +24,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.example.orderyurt.Login.LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/orderp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +39,6 @@
         <activity android:name=".RegisterCustomerActivity" />
         <activity android:name=".RegisterRestaurantActivity" />
         <activity android:name=".ReviewsListActivity" />
-        <activity android:name=".SplitPayActivity" />
         <activity android:name=".RestaurantPageActivity" />
         <activity android:name=".CreateCouponActivity" />
         <activity android:name=".ViewRestaurantPageActivity" />

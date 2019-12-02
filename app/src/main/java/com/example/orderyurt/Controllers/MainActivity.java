@@ -78,6 +78,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button button2= findViewById(R.id.viewAccountButton);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Bundle extras = new Bundle();
+                Intent intent = new Intent(MainActivity.this, CustomerPageActivity.class);
+                extras.putString("restaurantClicked", spinner.getSelectedItem().toString());
+                intent.putExtras(extras);
+                startActivity(intent);
+            }
+        });
+
     }
 
     //Initialize Spinner and an ArrayAdapter for displaying values

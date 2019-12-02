@@ -12,8 +12,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//TODO: ADD MVC!!
-
 /**
  * MenuActivity displays a restaurants menu Items to the users,
  * When a user clicks an item from the ListView, the item name is added to an array
@@ -42,7 +40,7 @@ public class MenuActivity extends AppCompatActivity {
         rest = b.getString("restaurantClicked");
 
         Toast.makeText(MenuActivity.this, rest,
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_SHORT).show();
         TextView currentRest;
         currentRest = (TextView) findViewById(R.id.menuTitle);;
         currentRest.setText(rest);
@@ -50,20 +48,19 @@ public class MenuActivity extends AppCompatActivity {
         Button restPageBtn = findViewById(R.id.restPageBtn);
         Button orderButton = findViewById(R.id.orderButton);
 
-
         ListView listview = (ListView) findViewById(R.id.listView1);
         AdapterView.OnItemClickListener cl = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> l, View v, int position, long id) {
-                //Log.i("MenuListView", "You clicked Item: " + id + " at position:" + position);
-                itemNames[counter] = String.valueOf(l.getItemAtPosition(position));//String.valueOf(itemNames[position]);
+                //Log.i("MenuListView", "You Added an item to basket");// Item: " + id + " at position:" + position);
+                Toast.makeText(getApplicationContext(), "You Added an item to basket", Toast.LENGTH_SHORT).show();
+                itemNames[counter] = String.valueOf(l.getItemAtPosition(position));
                 counter++;
                 price = price + 6.50;
 
             }
         };
         listview.setOnItemClickListener(cl);
-
 
         restPageBtn.setOnClickListener(
                 new View.OnClickListener() {
@@ -87,5 +84,4 @@ public class MenuActivity extends AppCompatActivity {
                     }
                 });
     }
-
 }

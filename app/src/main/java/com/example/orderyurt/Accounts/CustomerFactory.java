@@ -26,7 +26,6 @@ public class CustomerFactory {
         else if(userType.equalsIgnoreCase("gold")){
             return new GoldCustomer(name, email);
         }
-
         return null;
     }
 }

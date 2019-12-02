@@ -3,19 +3,21 @@ package com.example.orderyurt.Controllers;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * BasketActivity displays your entire basket contents alongside the totalCost of the basket.
+ * This activity will call OrderActivity and send the required variables
+ * @line is a string used to contain the variables of each item from the String array
+ * @rest string used to hold the value for current restaurant
+ * @order button is used to launch the intent to start the orderActivity
+ *
+ */
 public class BasketActivity extends AppCompatActivity {
-    //View Basket - show array of items selected by user
-    //Delete Item
-    //Calculate cost
-    //Go To PayActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

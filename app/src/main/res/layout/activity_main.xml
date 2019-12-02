@@ -56,5 +56,14 @@
         app:layout_constraintBottom_toBottomOf="@id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/viewAccountButton"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:baselineAligned="false"
+        android:text="@string/viewAccount"
+        app:layout_constraintBottom_toBottomOf="@id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </LinearLayout>

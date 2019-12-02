@@ -6,10 +6,7 @@ public class BasePay implements Pay {
     @Override
     public boolean verifyCard(String cardNum, String cvvNum) {
         if(cardNum.length() > 16){
-            //Toast.MakeText((this.Activity), Resource.String.sent, ToastLength.Long).Show();
-            //Toast.makeText((this.Activity), "INVALID CARD NUMBER: OVER 16 DIGITS", Toast.LENGTH_LONG).show();
             res+= "CARD NUMBER IS OVER 16 DIGITS IN LENGTH\n";
-
         } else if(cardNum.length() < 16){
             //Toast.makeText(this, "INVALID CARD NUMBER: UNDER 16 DIGITS", Toast.LENGTH_LONG).show();
             res+= "CARD NUMBER IS UNDER 16 DIGITS IN LENGTH\n";
@@ -28,26 +25,20 @@ public class BasePay implements Pay {
                 valid=true;
                 return true;
             }
-
         }
-
+        System.out.println(res);
         return false;
     }
 
     @Override
-    public boolean isCardValid() {
-        return valid;
-    }
-
-    @Override
     public boolean verifyPayment(int amount) {
-        if(amount > 20) return true;
+        if(amount > 1) return true;
         else return false;
     }
 
     @Override
     public String getPaymentInfo() {
-        return null;
+        return (this.cardNum + this.cvvNum);
     }
 
     @Override
@@ -55,5 +46,4 @@ public class BasePay implements Pay {
         this.cardNum = cardNum;
         this.cvvNum = cvv;
     }
-
 }
