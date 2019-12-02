@@ -64,7 +64,6 @@ public class PaymentActivity extends AppCompatActivity {
         cvvNum = ((EditText) findViewById(R.id.cvvField)).getText().toString();
         c1.setVisibility(View.GONE);
         c2.setVisibility(View.GONE);
-        //Toast.makeText(this, "TOASTY TOAST", Toast.LENGTH_LONG);
 
         if(choice=="solo"){
             Pay soloPay = new SoloDecorator(new BasePay());
@@ -72,6 +71,8 @@ public class PaymentActivity extends AppCompatActivity {
             if(soloPay.verifyCard(cardNum, cvvNum)){
                 if(soloPay.verifyPayment(totalprice.intValue())){
                     Toast.makeText(this, "SUCCESSFUL PAYMENT", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
                 }
                 else {
                     Toast.makeText(this, "COULD NOT VERIFY PAYMENT", Toast.LENGTH_LONG).show();
