@@ -17,13 +17,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CreateCouponActivity extends AppCompatActivity implements DelegateInterfaces.addCouponModelDelegate {
-    //Create coupon object and add it to db for this restaurant
 
     private DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
     private Date eDate, sDate;
     private Double  cValue = 0.0;
     private String cCode, cTitle;
-
     private addCouponModel model = new addCouponModel();
 
 
@@ -57,13 +55,19 @@ public class CreateCouponActivity extends AppCompatActivity implements DelegateI
         model.setDelegate(this);
     }
 
-    //TODO: The RID here should be the ID of the logged in user
+    /**
+     * This method calls the createCoupon function in the model class.
+     * Shows the user a success message.
+     * */
     public void addCouponBtnClicked(View v) {
-        model.createCoupon(cTitle, cCode, cValue, sDate, eDate, 1);
+        model.createCoupon(cTitle, cCode, cValue, sDate, eDate);
         Toast.makeText(CreateCouponActivity.this, "Subscribers have been notified.",
                 Toast.LENGTH_LONG).show();
     }
 
+    /**
+     * This method navigates the user to the RestaurantPageActivity.
+     * */
     @Override
     public void goToRestPageActivity(){
         Intent myIntent = new Intent(CreateCouponActivity.this, RestaurantPageActivity.class);

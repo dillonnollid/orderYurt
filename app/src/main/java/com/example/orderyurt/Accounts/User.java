@@ -5,5 +5,4 @@ public interface User {
     String getEmail();
     int getID();
     void setID(int ID);
-
 }

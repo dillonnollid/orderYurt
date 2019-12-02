@@ -15,10 +15,7 @@ import com.example.orderyurt.Accounts.Subscriber;
 
 public class ViewRestaurantPageActivity extends AppCompatActivity {
 
-    //This is a random user object, need to get the logged in user
     Subscriber user = new CustomerUser("Jane","Doe");
-
-    //Need to get the restaurant based on which restaurant page we are on
     RestaurantUser rUser = new RestaurantUser();
 
     private Button subscribeBtn, menuBtn, unSubscribeBtn;
@@ -30,9 +27,9 @@ public class ViewRestaurantPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_rest_page);
 
-        subscribeBtn = findViewById(R.id.subBtn);
-        menuBtn = findViewById(R.id.menuBtn1);
-        unSubscribeBtn = findViewById(R.id.unSubBtn);
+        subscribeBtn    = findViewById(R.id.subBtn);
+        menuBtn         = findViewById(R.id.menuBtn1);
+        unSubscribeBtn  = findViewById(R.id.unSubBtn);
 
         Intent i = getIntent();
         Bundle b = i.getExtras();
@@ -41,11 +38,8 @@ public class ViewRestaurantPageActivity extends AppCompatActivity {
         restPage = (TextView) findViewById(R.id.restPage);
         restPage.setText(rest);
 
-
-
-
         /*
-          Return to menu if menu button is clicked.
+         * Return to MenuActivity if menu button is clicked.
          */
         menuBtn.setOnClickListener(
                 new View.OnClickListener() {
@@ -57,8 +51,8 @@ public class ViewRestaurantPageActivity extends AppCompatActivity {
                 });
 
         /*
-          Utilising Observer Design Pattern.
-          Add subscriber to this restaurants subscriber ArrayList.
+         * Utilising Observer Design Pattern.
+         * Add subscriber to this restaurants subscriber ArrayList.
          */
         subscribeBtn.setOnClickListener(
                 new View.OnClickListener() {
@@ -70,8 +64,8 @@ public class ViewRestaurantPageActivity extends AppCompatActivity {
                 });
 
         /*
-          Utilising Observer Design Pattern.
-          Remove subscriber to this restaurants subscriber ArrayList.
+         * Utilising Observer Design Pattern.
+         * Remove subscriber to this restaurants subscriber ArrayList.
          */
         unSubscribeBtn.setOnClickListener(
                 new View.OnClickListener() {

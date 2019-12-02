@@ -20,6 +20,13 @@
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/orderButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GO TO BASKET"
+        app:layout_constraintTop_toBottomOf="@+id/listView1" />
+
+    <Button
         android:id="@+id/restPageBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,13 +43,6 @@
         tools:layout_editor_absoluteX="-16dp">
 
     </ListView>
-
-    <Button
-        android:id="@+id/orderButton"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="GO TO BASKET"
-        app:layout_constraintTop_toBottomOf="@+id/listView1"/>
 
 
 </LinearLayout>

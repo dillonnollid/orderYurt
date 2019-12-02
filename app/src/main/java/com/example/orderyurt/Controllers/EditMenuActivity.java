@@ -21,6 +21,10 @@ public class EditMenuActivity extends AppCompatActivity {
         addItemBtn  = findViewById(R.id.addItemBtn);
         listview    =  findViewById(R.id.listView2);
 
+        /*
+         * Sets up a listview of the items on the current restaurantUsers menu.
+         * Makes each item clickable and opens the EditItemActivity when an item is selected.
+         */
         AdapterView.OnItemClickListener cl = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> l, View v, int position, long id) {
@@ -33,6 +37,10 @@ public class EditMenuActivity extends AppCompatActivity {
         };
         listview.setOnItemClickListener(cl);
 
+        /*
+         * Sets up an onClick listener for the addItemBtn.
+         * Navigates the user to the AddItemActivity onClick.
+         */
         addItemBtn.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View view) {

@@ -21,6 +21,12 @@ public class RestaurantUser implements User, Subject{
         menu        = new Menu();
     }
 
+    public RestaurantUser(String name, String email, String address){
+        this.name = name;
+        this.email = email;
+        this.address = address;
+    }
+
     public Menu getMenu(){
         return this.menu;
     }
