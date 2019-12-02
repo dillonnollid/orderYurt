@@ -12,8 +12,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//TODO: ADD MVC!!
-
 /**
  * MenuActivity displays a restaurants menu Items to the users,
  * When a user clicks an item from the ListView, the item name is added to an array
@@ -50,7 +48,6 @@ public class MenuActivity extends AppCompatActivity {
         Button restPageBtn = findViewById(R.id.restPageBtn);
         Button orderButton = findViewById(R.id.orderButton);
 
-
         ListView listview = (ListView) findViewById(R.id.listView1);
         AdapterView.OnItemClickListener cl = new AdapterView.OnItemClickListener() {
             @Override
@@ -64,7 +61,6 @@ public class MenuActivity extends AppCompatActivity {
             }
         };
         listview.setOnItemClickListener(cl);
-
 
         restPageBtn.setOnClickListener(
                 new View.OnClickListener() {
@@ -88,5 +84,4 @@ public class MenuActivity extends AppCompatActivity {
                     }
                 });
     }
-
 }

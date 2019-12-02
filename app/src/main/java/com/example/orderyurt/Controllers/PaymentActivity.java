@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-//TODO: ADD MVC!!
 
 /**
  * PaymentActivity class creates Payment Menu and options for Solo or Split pay
@@ -52,7 +51,6 @@ public class PaymentActivity extends AppCompatActivity {
 
         c1.setVisibility(View.GONE);
         c2.setVisibility(View.GONE);
-
     }
 
     public void soloClick(View view) {
