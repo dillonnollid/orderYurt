@@ -15,6 +15,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 //TODO: ADD MVC!!
+
+/**
+ * PaymentActivity class creates Payment Menu and
+ */
 public class PaymentActivity extends AppCompatActivity {
     private String cardNum, cvvNum, choice, rest, contents;
     private Double totalprice;
@@ -65,16 +69,8 @@ public class PaymentActivity extends AppCompatActivity {
         if(choice=="solo"){
             Pay soloPay = new SoloDecorator(new BasePay());
 
-            boolean chance = soloPay.verifyPayment(40);
-            //chance = soloPay.verifyCard(cardNum, cvvNum);
-            if(chance){
-                Toast.makeText(this, "ACCEPTED PAYMENT, ORDER COMPLETE", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, "ORDER NOT COMPLETE", Toast.LENGTH_LONG).show();
-            }
-
-            /*if(soloPay.verifyCard(cardNum, cvvNum)){
-                if(soloPay.verifyPayment(15)){
+            if(soloPay.verifyCard(cardNum, cvvNum)){
+                if(soloPay.verifyPayment(totalprice.intValue())){
                     Toast.makeText(this, "SUCCESSFUL PAYMENT", Toast.LENGTH_LONG).show();
                 }
                 else {
@@ -83,7 +79,7 @@ public class PaymentActivity extends AppCompatActivity {
             }
             else {
                 Toast.makeText(this, "COULD NOT VERIFY CARD", Toast.LENGTH_LONG).show();
-            }*/
+            }
         }
         else if(choice=="split"){
             Pay splitPay = new SplitDecorator(new BasePay());

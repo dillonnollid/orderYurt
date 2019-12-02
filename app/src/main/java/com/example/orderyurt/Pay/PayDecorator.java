@@ -3,7 +3,6 @@ package com.example.orderyurt.Pay;
 public abstract class PayDecorator implements Pay {
     private final BasePay decoratedPay;
 
-
     public PayDecorator(BasePay pay) {
         this.decoratedPay = pay;
     }
@@ -20,8 +19,5 @@ public abstract class PayDecorator implements Pay {
     }
     public boolean verifyPayment(int amount){
         return decoratedPay.verifyPayment(amount);
-    }
-    public boolean isCardValid(){
-        return decoratedPay.isCardValid();
     }
 }

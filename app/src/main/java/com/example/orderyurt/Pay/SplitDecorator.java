@@ -23,8 +23,5 @@ public class SplitDecorator extends PayDecorator {
     public void setPaymentInfo(String cardNum, String cvv) {
         super.setPaymentInfo(cardNum, cvv);
     }
-    @Override
-    public boolean isCardValid(){
-        return super.isCardValid();
-    }
+
 }
