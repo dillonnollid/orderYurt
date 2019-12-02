@@ -39,18 +39,18 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:ems="10"
+        android:hint="@string/please_enter_16_digit_card_number"
         android:importantForAutofill="no"
         android:inputType="number"
-        android:text="@string/please_enter_16_digit_card_number"
         android:textAlignment="center" />
 
     <EditText
         android:id="@+id/cvvField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/please_enter_3_digit_cvv_number"
         android:importantForAutofill="no"
         android:inputType="number"
-        android:text="@string/please_enter_3_digit_cvv_number"
         android:textAlignment="center" />
 
     <Button
