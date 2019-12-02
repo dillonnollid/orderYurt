@@ -34,13 +34,13 @@ public class BasePay implements Pay {
 
     @Override
     public boolean verifyPayment(int amount) {
-        if(amount > 20) return true;
+        if(amount > 10) return true;
         else return false;
     }
 
     @Override
     public String getPaymentInfo() {
-        return null;
+        return (this.cardNum + this.cvvNum);
     }
 
     @Override
