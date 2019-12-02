@@ -20,9 +20,14 @@ public interface DataAPI {
 
     @POST("user/login")
     Call<Map<String,String>> authenticateLogin(@Query("username") String username, @Query("password") String password);
+    @POST("user/add")
+    Call<String> registerUserAccount(@Query("username") String username, @Query("email") String email, @Query("password") String password);
 
     @GET("restaurant/")
     Call<List<RestaurantUser>> getRestaurants();
+
+    @POST("restaurant/add")
+    Call<String> registerAccount(@Query("username") String username, @Query("email") String email, @Query("password") String password);
 
 //    @POST("login ")
 //    Call<Map<String,String>> authenticateLogin(@Body Map<String,String> loginCredentialsMap);
