@@ -11,6 +11,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * BasketActivity displays your entire basket contents alongside the totalCost of the basket.
+ * This activity will call OrderActivity and send the required variables
+ * @line is a string used to contain the variables of each item from the String array
+ * @rest string used to hold the value for current restaurant
+ * @order button is used to launch the intent to start the orderActivity
+ *
+ */
 public class BasketActivity extends AppCompatActivity {
 
     @Override

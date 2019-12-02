@@ -48,12 +48,10 @@ public class OrderActivity extends AppCompatActivity {
         payButton.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View view) {
-                        //Bundle bundle = new Bundle();
                         Intent myIntent = new Intent(OrderActivity.this, PaymentActivity.class);
                         myIntent.putExtra("restName", rest); //Optional parameters
                         myIntent.putExtra("totalprice", price);
                         myIntent.putExtra("items", items);
-                        //myIntent.putExtras(bundle);
                         OrderActivity.this.startActivity(myIntent);
             }
         });

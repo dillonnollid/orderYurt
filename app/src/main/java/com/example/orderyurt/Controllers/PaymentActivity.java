@@ -21,12 +21,22 @@ import android.widget.Toast;
  * User clicks button for either Solo or Split pay, text boxes appear for credit card details
  * both boxes only accept a number, and if the card number is invalid it will return a Toast error
  * If user decides to split pay, there total cost will be reduced
- * 
+ * The decorator objects allow us to have more object diversity
+ * @cardNum holds the card number
+ * @cvvNum holds the cvv number
+ * @choice holds the value of Split or Solo
+ * @rest holds the name of the current restaurant
+ * @contents holds the order details
+ * @totalprice holds the total cost of the order
+ * @c1 is a EditText element for inputting card number
+ * @c2 is a EditText element for inputting cvv number
+ * @soloPay is a SoloDecorator object, a variant of PayDecorator
+ * @splitPay is a SplitDecorator object, a variant of PayDecorator
  */
 public class PaymentActivity extends AppCompatActivity {
     private String cardNum, cvvNum, choice, rest, contents;
     private Double totalprice;
-    View c1,c2;// = (EditText)findViewById(R.id.cardField),c2 =(EditText)findViewById(R.id.cvvField) ;
+    View c1,c2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

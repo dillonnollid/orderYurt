@@ -32,7 +32,7 @@ public class BasePay implements Pay {
 
     @Override
     public boolean verifyPayment(int amount) {
-        if(amount > 10) return true;
+        if(amount > 1) return true;
         else return false;
     }
 

@@ -55,7 +55,7 @@ public class MenuActivity extends AppCompatActivity {
         AdapterView.OnItemClickListener cl = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> l, View v, int position, long id) {
-                //Log.i("MenuListView", "You clicked Item: " + id + " at position:" + position);
+                Log.i("MenuListView", "You Added an item to basket");// Item: " + id + " at position:" + position);
                 itemNames[counter] = String.valueOf(l.getItemAtPosition(position));//String.valueOf(itemNames[position]);
                 counter++;
                 price = price + 6.50;
