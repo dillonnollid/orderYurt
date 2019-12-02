@@ -42,7 +42,7 @@ public class MenuActivity extends AppCompatActivity {
         rest = b.getString("restaurantClicked");
 
         Toast.makeText(MenuActivity.this, rest,
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_SHORT).show();
         TextView currentRest;
         currentRest = (TextView) findViewById(R.id.menuTitle);;
         currentRest.setText(rest);
@@ -55,8 +55,9 @@ public class MenuActivity extends AppCompatActivity {
         AdapterView.OnItemClickListener cl = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> l, View v, int position, long id) {
-                Log.i("MenuListView", "You Added an item to basket");// Item: " + id + " at position:" + position);
-                itemNames[counter] = String.valueOf(l.getItemAtPosition(position));//String.valueOf(itemNames[position]);
+                //Log.i("MenuListView", "You Added an item to basket");// Item: " + id + " at position:" + position);
+                Toast.makeText(getApplicationContext(), "You Added an item to basket", Toast.LENGTH_SHORT).show();
+                itemNames[counter] = String.valueOf(l.getItemAtPosition(position));
                 counter++;
                 price = price + 6.50;
 

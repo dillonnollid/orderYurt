@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Title" />
+        android:hint="Title"/>
 
     <EditText
         android:id="@+id/reviewDescription"
@@ -43,7 +43,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="Description" />
+        android:hint="Description" />
 
     <Button
         android:id="@+id/addReviewButton"
@@ -51,9 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#E91E63"
+        android:onClick="addReviewBtnClicked"
         android:text="Add "
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:onClick="addReviewBtnClicked"/>
+        android:textStyle="bold" />
 
 </LinearLayout>
