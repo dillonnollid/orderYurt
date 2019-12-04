@@ -6,10 +6,10 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -18,9 +18,14 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.orderyurt.Controllers.MainActivity;
 import com.example.orderyurt.Controllers.R;
+import com.example.orderyurt.data.DataAPI;
+import com.example.orderyurt.data.ServiceGenerator;
+import java.util.Map;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -41,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         registerButton.setEnabled(true);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
+
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
             public void onChanged(@Nullable LoginFormState loginFormState) {
@@ -54,30 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (loginFormState.getPasswordError() != null) {
                     passwordEditText.setError(getString(loginFormState.getPasswordError()));
                 }
-            }
-        });
-
-        loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
-            @Override
-            public void onChanged(@Nullable LoginResult loginResult) {
-                if (loginResult == null) {
-                    return;
-                }
-                loadingProgressBar.setVisibility(View.GONE);
-                if (loginResult.getError() != null) {
-                    showLoginFailed(loginResult.getError());
-                }
-                if (loginResult.getSuccess() != null) {
-                    updateUiWithUser(loginResult.getSuccess());
-                }
-                setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
             }
         });
 
@@ -105,8 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
-                            passwordEditText.getText().toString());
+                   authenticateLogin(usernameEditText.getText().toString(),passwordEditText.getText().toString());
                 }
                 return false;
             }
@@ -116,8 +97,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                authenticateLogin(usernameEditText.getText().toString(),passwordEditText.getText().toString());
             }
         });
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -130,13 +110,59 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
+    private void updateUiWithUser(String username) {
+        String welcome = getString(R.string.welcome) + username +"!";
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }
 
-    private void showLoginFailed(@StringRes Integer errorString) {
+    private void showLoginFailed(String errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
+
+    private void authenticateLogin(final String username, String password){
+        DataAPI loginAPI;
+        loginAPI = ServiceGenerator.createService(DataAPI.class);
+
+        Call<Map<String,String>> call = loginAPI.authenticateLogin(username,password);
+
+        try {
+            // TODO: handle loggedInUser authentication
+            Log.i("test","test2");
+            call.enqueue(new Callback<Map<String,String>>() {
+                @Override
+                public void onResponse(Call<Map<String,String>>  call, Response<Map<String,String>> response) {
+                    if (!response.isSuccessful()){
+//                                new Result.Error(new IOException("Error logging in. Code: " + response.code()));
+                    }
+                    if (response.body() != null) {
+                        Log.i("onSuccess", response.body().toString());
+
+                        if(response.body().containsValue("good")) {
+                            Log.i("onResponse", "success: " +response.body().toString());
+                            updateUiWithUser(username);
+                            setResult(Activity.RESULT_OK);
+
+                            //Complete and destroy login activity once successful
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else {
+                            Log.i("onResponse","fail: "+response.code() + response.body().toString());
+                            showLoginFailed(response.code() + response.body().toString());
+                        }
+                    }
+                }
+                @Override
+                public void onFailure(Call<Map<String,String>>  call, Throwable t) {
+                    System.out.println("error in call");
+                }
+            });
+
+        } catch (Exception e) {
+            Log.i("LoginDataSource.Exception","do nothing");
+        }
     }
 }

@@ -17,7 +17,6 @@ public interface DataAPI {
 
     @GET("restaurant/")
     Call<List<RestaurantUser>> getRestaurants();
-
     @POST("restaurant/add")
-    Call<String> registerAccount(@Query("username") String username, @Query("email") String email, @Query("password") String password);
+    Call<String> registerAccount(@Query("username") String username, @Query("name") String name, @Query("email") String email, @Query("password") String password);
 }

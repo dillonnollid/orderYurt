@@ -1,8 +1,6 @@
 package com.example.orderyurt.Controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,23 +8,14 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-
 import com.example.orderyurt.Accounts.RestaurantUser;
 import com.example.orderyurt.data.DataAPI;
-import com.example.orderyurt.data.Result;
 import com.example.orderyurt.data.ServiceGenerator;
-import com.example.orderyurt.data.model.LoggedInUser;
-
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-//TODO: ADD MVC!!
 /**
  * The MainActivity method displays a list of restaurants to the User with a Spinner
  * The User can choose the participating restaurant where they wish to dine by clicking the view menu button.
@@ -54,9 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<List<RestaurantUser>> call, Response<List<RestaurantUser>> response) {
                     if (!response.isSuccessful()){
-                        new Result.Error(new IOException("Error logging in. Code: " + response.code()));
+//                        new Result.Error(new IOException("Error logging in. Code: " + response.code()));
                     }
                     if (response.body() != null)
+                        Log.i("testResponse",  response.body().get(2).getName());
                         makeAndPopulateSpinner(response.body());
                 }
                 @Override
@@ -88,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     //Initialize Spinner and an ArrayAdapter for displaying values
@@ -104,5 +93,4 @@ public class MainActivity extends AppCompatActivity {
                 .simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerArrayAdapter);
     }
-
 }

@@ -10,9 +10,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import com.example.orderyurt.Controllers.R;
 import com.example.orderyurt.data.DataAPI;
-import com.example.orderyurt.data.Result;
 import com.example.orderyurt.data.ServiceGenerator;
-import java.io.IOException;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -57,20 +55,20 @@ public class RegisterAccount extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
+
+    //registers restaurant
     public static void registerAccount(String username, String email, String password){
         DataAPI orderUpAPI;
         orderUpAPI = ServiceGenerator.createService(DataAPI.class);
 
-        Call<String> call = orderUpAPI.registerAccount(username, email, password);
+        Call<String> call = orderUpAPI.registerAccount(username, username, email, password);
 
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 if (!response.isSuccessful()){
-                    new Result.Error(new IOException("Error logging in. Code: " + response.code()));
+//                    new Result.Error(new IOException("Error logging in. Code: " + response.code()));
                 }
                 if (response.body() != null)
                     Log.i("RegisterAccount","non null response received");
@@ -81,6 +79,8 @@ public class RegisterAccount extends AppCompatActivity {
             }
         });
     }
+
+    //Registers normal user (placing food orders)
     public static void registerUserAccount(String username, String email, String password){
         DataAPI orderUpAPI;
         orderUpAPI = ServiceGenerator.createService(DataAPI.class);
@@ -91,7 +91,7 @@ public class RegisterAccount extends AppCompatActivity {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 if (!response.isSuccessful()){
-                    new Result.Error(new IOException("Error logging in. Code: " + response.code()));
+//                    new Result.Error(new IOException("Error logging in. Code: " + response.code()));
                 }
                 if (response.body() != null)
                     Log.i("RegisterAccount","non null response received");
