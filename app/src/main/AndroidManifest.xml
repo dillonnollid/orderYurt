@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.example.orderyurt.Login.RegisterAccount"></activity>
+        <activity android:name="com.example.orderyurt.Login.RegisterAccountActivity"></activity>
         <activity android:name=".OrderActivity" />
         <activity
             android:name=".PaymentActivity"

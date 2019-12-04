@@ -15,7 +15,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RegisterAccount extends AppCompatActivity {
+public class RegisterAccountActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class RegisterAccount extends AppCompatActivity {
                 String password = emailEditText.getText().toString();
                 String email = passwordEditText.getText().toString();
                 registerAccount(username, password,email);
-                Intent intent = new Intent(RegisterAccount.this, LoginActivity.class);
+                Intent intent = new Intent(RegisterAccountActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +51,7 @@ public class RegisterAccount extends AppCompatActivity {
                 String password = emailEditText.getText().toString();
                 String email = passwordEditText.getText().toString();
                 registerUserAccount(username, password,email);
-                Intent intent = new Intent(RegisterAccount.this, LoginActivity.class);
+                Intent intent = new Intent(RegisterAccountActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -71,7 +71,7 @@ public class RegisterAccount extends AppCompatActivity {
 //                    new Result.Error(new IOException("Error logging in. Code: " + response.code()));
                 }
                 if (response.body() != null)
-                    Log.i("RegisterAccount","non null response received");
+                    Log.i("RegisterAccountActivity","non null response received");
             }
             @Override
             public void onFailure(Call<String>  call, Throwable t) {
@@ -94,7 +94,7 @@ public class RegisterAccount extends AppCompatActivity {
 //                    new Result.Error(new IOException("Error logging in. Code: " + response.code()));
                 }
                 if (response.body() != null)
-                    Log.i("RegisterAccount","non null response received");
+                    Log.i("RegisterAccountActivity","non null response received");
             }
             @Override
             public void onFailure(Call<String>  call, Throwable t) {
