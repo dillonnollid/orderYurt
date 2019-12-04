@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUiWithUser(String username) {
-        String welcome = getString(R.string.welcome) + username +"!";
+        String welcome = getString(R.string.welcome) +" "+ username +"!";
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }
 

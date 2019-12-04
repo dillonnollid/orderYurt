@@ -5,7 +5,7 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in</string>
-    <string name="action_register">Register</string>
+    <string name="action_register">Register Restaurant</string>
     <string name="action_register_user">Register User</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">Welcome </string>
@@ -67,6 +67,7 @@
     <string name="viewAccount">VIEW ACCOUNT</string>
     <string name="basketa">Basket</string>
     <string name="paymenta">Payment</string>
+    <string name="register_login_page">Register</string>
 
     <string-array name="testMenu1">
         <item>6 Chicken Wings</item>
